@@ -10,7 +10,12 @@ const phoneSchema = mongoose.Schema({
     index: true,
     required: "Manufacturer is required ",
   },
-  color: { type: String, index: true, required: "color is required " },
+  description: {
+    type: String,
+    index: true,
+    required: "description is required ",
+  },
+  color: { type: String, index: true, required: "color is required" },
   price: { type: Number, index: true, required: "Price is required" },
   imageFileName: { type: String },
   screen: { type: Number, index: true, required: "Screen is required" },
