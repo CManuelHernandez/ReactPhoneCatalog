@@ -11,8 +11,6 @@ export const PhonesPage = () => {
     const url = "http://localhost:3000/phones";
     const resp = await fetch(url);
     const results = await resp.json();
-    console.log("Phones", results);
-    console.log("Response Phones", results);
 
     const apiPhones = results.map((phone) => {
       return {
@@ -32,7 +30,7 @@ export const PhonesPage = () => {
 
   return (
     <>
-      <h2>ApiCallTest</h2>
+      <h2>REACT - Phone Catalog</h2>
       <ol>
         {phone.map((phone) => (
           <li key={phone.id}>
