@@ -1,12 +1,13 @@
 import React from "react";
 import { PhoneCard } from "./PhoneCard";
-import { Link } from "react-router-dom";
+import { Loading } from "../helpers/Loading";
 import { Container, Row, Col } from "react-bootstrap";
 
 import classes from "./Phone.module.css";
 
 export const PhonesPage = () => {
   const [phone, setPhones] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
     getPhones();
@@ -16,7 +17,6 @@ export const PhonesPage = () => {
     const url = "http://localhost:3000/phones";
     const resp = await fetch(url);
     const results = await resp.json();
-    console.log(results);
 
     const apiPhones = results.map((phone) => {
       return {
@@ -32,6 +32,7 @@ export const PhonesPage = () => {
       };
     });
     setPhones(apiPhones);
+    setLoading(true);
   };
 
   return (
@@ -50,24 +51,28 @@ export const PhonesPage = () => {
           </Col>
 
           <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-            {phone.map((phone) => (
-              <Col md={5} className={classes.phoneCard}>
-                <PhoneCard
-                  key={phone.id}
-                  md={4}
-                  className={classes.phoneCard}
-                  name={phone.name}
-                  manufacturer={phone.manufacturer}
-                  description={phone.description}
-                  color={phone.color}
-                  price={phone.price}
-                  imageFileName={phone.imageFileName}
-                  screen={phone.screen}
-                  processor={phone.processor}
-                  {...phone}
-                />
-              </Col>
-            ))}
+            {loading ? (
+              phone.map((phone) => (
+                <Col md={5} className={classes.phoneCard}>
+                  <PhoneCard
+                    key={phone.id}
+                    md={4}
+                    className={classes.phoneCard}
+                    name={phone.name}
+                    manufacturer={phone.manufacturer}
+                    description={phone.description}
+                    color={phone.color}
+                    price={phone.price}
+                    imageFileName={phone.imageFileName}
+                    screen={phone.screen}
+                    processor={phone.processor}
+                    {...phone}
+                  />
+                </Col>
+              ))
+            ) : (
+              <Loading />
+            )}
           </Row>
         </Container>
       </Container>

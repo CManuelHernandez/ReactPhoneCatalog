@@ -1,7 +1,7 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import { PhonesPage } from "./phones/PhonesPage";
+import { PhonesPage } from "./components/phones/PhonesPage";
 import "./App.css";
-import { PhonesDetailPage } from "./phones/PhonesDetailPage";
+import { PhonesDetailPage } from "./components/phones/PhonesDetailPage";
 
 function App() {
   return (
