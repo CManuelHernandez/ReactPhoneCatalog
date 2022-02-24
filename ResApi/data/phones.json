@@ -28,7 +28,7 @@
       "description": "lorem ipsum dolor sit amet consectetur",
       "color": "black",
       "price": 1100,
-      "imageFileName": "images/hdp50.jpg",
+      "imageFileName": "images/hpd50.jpg",
       "screen": 7,
       "processor": "Snapdragon 888 4G",
       "ram": 8
@@ -39,7 +39,7 @@
       "description": "lorem ipsum dolor sit amet consectetur",
       "color": "Blue",
       "price": 348,
-      "imageFileName": "images/xiaomipocox3",
+      "imageFileName": "images/xiaomipocox3.jpg",
       "screen": 6,
       "processor": "Snapdragon 888 4G",
       "ram": 6
