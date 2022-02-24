@@ -1,20 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const PhonesPage = () => {
   const [phone, setPhones] = React.useState([]);
 
   React.useEffect(() => {
-    getUsers();
+    getPhones();
   }, []);
 
-  const getUsers = async () => {
+  const getPhones = async () => {
     const url = "http://localhost:3000/phones";
     const resp = await fetch(url);
     const results = await resp.json();
+    console.log(results);
 
     const apiPhones = results.map((phone) => {
       return {
-        id: phone.id,
+        id: phone._id,
         name: phone.name,
         manufacturer: phone.manufacturer,
         description: phone.description,
@@ -34,10 +36,14 @@ export const PhonesPage = () => {
       <ol>
         {phone.map((phone) => (
           <li key={phone.id}>
-            Nombre: {phone.name} Manufacturer: {phone.manufacturer} Description:
-            {phone.description} Color: {phone.color} Price: {phone.price}
-            ImageFileName: {phone.imageFileName} Screen: {phone.screen}{" "}
-            Processor: {phone.processor}
+            <Link to={`/${phone.id}`}>
+              Nombre: {phone.name} Manufacturer: {phone.manufacturer}
+              Description:
+              {phone.description} Color: {phone.color} Price: {phone.price}
+              ImageFileName: {phone.imageFileName} Screen: {phone.screen}
+              Processor: {phone.processor}
+            </Link>
+            <br />
           </li>
         ))}
       </ol>
