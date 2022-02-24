@@ -1,6 +1,5 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+import { Row, Col, Card, Button } from "react-bootstrap";
 import classes from "./Phone.module.css";
 
 export const PhoneCard = ({
@@ -17,20 +16,28 @@ export const PhoneCard = ({
   return (
     <Card className={classes.phoneCardView}>
       <Card.Body>
-        <Card.Title>
-          <strong>NAME:</strong> {name}
-        </Card.Title>
-        <Card.Text>Manufacturer: {manufacturer}</Card.Text>
-        <Card.Text>Color: {color}</Card.Text>
-        <Card.Text>Screen: {screen} Inches</Card.Text>
-        <Card.Text>EMAIL: {processor} Ram</Card.Text>
+        <Card.Title className={classes.phoneCardTitle}>{name}</Card.Title>
+        <Row>
+          <Col md={6} className={classes.phoneInfo}>
+            <Card.Text>Manufacturer: {manufacturer}</Card.Text>
+            <Card.Text>Color: {color}</Card.Text>
+          </Col>
+          <Col md={6} className={classes.phoneInfo}>
+            <Card.Text>Screen: {screen} Inches</Card.Text>
+            <Card.Text>Processor: {processor} Ram</Card.Text>
+          </Col>
+        </Row>
         <img
           className={classes.phoneImg}
           src={`http://localhost:3000/${imageFileName}`}
           alt={imageFileName}
         />
-        <Card.Text>Description: {description}</Card.Text>
-        <Card.Text>Price: {price} €</Card.Text>
+        <Card.Text style={{ textAlign: "center", marginTop: 10 }}>
+          Description: {description}
+        </Card.Text>
+        <Card.Text style={{ textAlign: "right", fontSize: 40 }}>
+          {price} €
+        </Card.Text>
         <Button className={classes.btnPrimary} href={`/${id}`}>
           Detail
         </Button>

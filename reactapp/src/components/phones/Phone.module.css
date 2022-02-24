@@ -11,6 +11,9 @@
   padding-right: 25px;
   height: auto;
 }
+.phoneCardTitle {
+  font-size: 2.2rem;
+}
 .phoneCardView,
 .phoneCardViewDetail {
   box-shadow: 0 0 15px #1e780e;
@@ -32,6 +35,10 @@
 .phoneImg {
   width: 100%;
   border-radius: 15px;
+}
+.phoneInfo {
+  padding: 20px;
+  height: auto;
 }
 .btnPrimary {
   display: flex;

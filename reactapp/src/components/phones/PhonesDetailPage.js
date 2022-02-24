@@ -48,7 +48,7 @@ export const PhonesDetailPage = () => {
                   </Col>
                   <Col md={9} className={classes.phoneDetailInfo}>
                     <Card.Body className={classes.phoneDetailInfoText}>
-                      <Card.Title>
+                      <Card.Title className={classes.phoneCardTitle}>
                         {phone.name} from {phone.manufacturer}
                       </Card.Title>
                       <Card.Title>Color: {phone.color}</Card.Title>
@@ -56,8 +56,8 @@ export const PhonesDetailPage = () => {
                       <Card.Title>Processor: {phone.processor} Ram</Card.Title>
                       <br />
                       <Card.Title>Description: {phone.description}</Card.Title>
-                      <Card.Title style={{ textAlign: "right" }}>
-                        Price: {phone.price} €
+                      <Card.Title style={{ textAlign: "right", fontSize: 50 }}>
+                        {phone.price} €
                       </Card.Title>
                       <Button
                         className={`${classes.btnPrimary} ${classes.btnDetail}`}
