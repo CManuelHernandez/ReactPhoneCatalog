@@ -1,5 +1,9 @@
 import React from "react";
+import { PhoneCard } from "./PhoneCard";
 import { Link } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
+
+import classes from "./Phone.module.css";
 
 export const PhonesPage = () => {
   const [phone, setPhones] = React.useState([]);
@@ -32,21 +36,41 @@ export const PhonesPage = () => {
 
   return (
     <>
-      <h2>REACT - Phone Catalog</h2>
-      <ol>
-        {phone.map((phone) => (
-          <li key={phone.id}>
-            <Link to={`/${phone.id}`}>
-              Nombre: {phone.name} Manufacturer: {phone.manufacturer}
-              Description:
-              {phone.description} Color: {phone.color} Price: {phone.price}
-              ImageFileName: {phone.imageFileName} Screen: {phone.screen}
-              Processor: {phone.processor}
-            </Link>
-            <br />
-          </li>
-        ))}
-      </ol>
+      <Container fluid className={classes.phoneSection}>
+        <Container className={classes.phoneWrapper}>
+          <Col md={12} className={classes.phoneInfoTitle}>
+            <div>
+              <h1 className={classes.phoneHeading}>
+                <strong className="turquoise"> REACT </strong> - Phone Catalog
+              </h1>
+              <h2 className={classes.phoneSubtitle}>
+                Carlos Manuel Hernández Montero
+              </h2>
+            </div>
+          </Col>
+
+          <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+            {phone.map((phone) => (
+              <Col md={5} className={classes.phoneCard}>
+                <PhoneCard
+                  key={phone.id}
+                  md={4}
+                  className={classes.phoneCard}
+                  name={phone.name}
+                  manufacturer={phone.manufacturer}
+                  description={phone.description}
+                  color={phone.color}
+                  price={phone.price}
+                  imageFileName={phone.imageFileName}
+                  screen={phone.screen}
+                  processor={phone.processor}
+                  {...phone}
+                />
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </Container>
     </>
   );
 };

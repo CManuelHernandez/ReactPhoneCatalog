@@ -1,5 +1,7 @@
 import React from "react";
 import { useParams, Navigate, useNavigate } from "react-router-dom";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import classes from "./Phone.module.css";
 
 export const PhonesDetailPage = () => {
   const { id } = useParams();
@@ -27,20 +29,40 @@ export const PhonesDetailPage = () => {
   }
 
   return (
-    <div>
-      <h1>Detalle</h1>
-      <h3>{phone.name}</h3>
-      <h4>{phone.manufacturer}</h4>
-      <h4>{phone.description}</h4>
-      <h4>{phone.color}</h4>
-      <h4>{phone.price}</h4>
-      <img src={`http://localhost:3000/${phone.imageFileName}`} />
-      <h4>{phone.imageFileName}</h4>
-      <h4>{phone.screen}</h4>
-      <h4>{phone.processor}</h4>
-      <button className="btn btn-outline-info" onClick={handleReturn}>
-        Back to Main Page
-      </button>
-    </div>
+    <>
+      <Container fluid className={classes.phoneSection}>
+        <Container className={classes.phoneWrapper}>
+          <Card className={classes.phoneCardViewDetail}>
+            <Row>
+              <Col md={3} className={classes.phoneDetailImg}>
+                <Card.Img
+                  className={classes.phoneImg}
+                  src={`http://localhost:3000/${phone.imageFileName}`}
+                  alt="card-img"
+                />
+              </Col>
+              <Col md={9} className={classes.phoneDetailInfo}>
+                <Card.Body className={classes.phoneDetailInfoText}>
+                  <Card.Title>ID: {phone.id}</Card.Title>
+                  <Card.Title>Name: {phone.name}</Card.Title>
+                  <Card.Title>Email: {phone.manufacturer}</Card.Title>
+                  <Card.Title>Email: {phone.description}</Card.Title>
+                  <Card.Title>Email: {phone.color}</Card.Title>
+                  <Card.Title>Email: {phone.price}</Card.Title>
+                  <Card.Title>Email: {phone.screen}</Card.Title>
+                  <Card.Title>Email: {phone.processor}</Card.Title>
+                  <Button
+                    className={`${classes.btnPrimary} ${classes.btnDetail}`}
+                    onClick={handleReturn}
+                  >
+                    Retrun
+                  </Button>
+                </Card.Body>
+              </Col>
+            </Row>
+          </Card>
+        </Container>
+      </Container>
+    </>
   );
 };

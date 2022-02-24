@@ -1,0 +1,81 @@
+.phoneSection {
+  position: relative;
+  padding-top: 150px;
+  padding-bottom: 30px;
+}
+.phoneCard {
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
+  height: auto;
+}
+.phoneCardView,
+.phoneCardViewDetail {
+  box-shadow: 0 0 15px #1e780e;
+  background-color: transparent;
+  opacity: 0.9;
+  transition: all 0.5s ease 0s;
+  height: 100%;
+  background-color: #b8bab7;
+}
+.phoneCardView:hover,
+.phoneCardViewDetail:hover {
+  transform: scale(1.02);
+  overflow: hidden;
+  box-shadow: 0 0 5px #1e780e;
+}
+.phoneCardView {
+  background-color: #52564e;
+}
+.phoneImg {
+  width: 100%;
+  border-radius: 15px;
+}
+.btnPrimary {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.75rem;
+  color: black;
+  font-weight: bold;
+  background-color: #3be71d;
+  border-color: #3be71d;
+}
+.btnDetail {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0 0.75rem 0.75rem 0;
+}
+.btnPrimary:hover {
+  color: black;
+  background-color: #8fdc82;
+  border-color: #8fdc82;
+}
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+.phoneHeading,
+.phoneSubtitle {
+  color: whitesmoke;
+  font-size: 2.3em;
+  font-weight: 500;
+  padding-top: 10px;
+}
+.phoneSubtitle {
+  text-align: center;
+  font-size: 1.8em;
+}
+.phoneInfoTitle h1,
+.phoneInfoTitle p {
+  display: flex;
+  justify-content: center;
+}
+.phoneDetailInfoText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70%;
+}
