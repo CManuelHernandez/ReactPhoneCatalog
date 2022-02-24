@@ -43,14 +43,17 @@ export const PhonesDetailPage = () => {
               </Col>
               <Col md={9} className={classes.phoneDetailInfo}>
                 <Card.Body className={classes.phoneDetailInfoText}>
-                  <Card.Title>ID: {phone.id}</Card.Title>
-                  <Card.Title>Name: {phone.name}</Card.Title>
-                  <Card.Title>Email: {phone.manufacturer}</Card.Title>
-                  <Card.Title>Email: {phone.description}</Card.Title>
-                  <Card.Title>Email: {phone.color}</Card.Title>
-                  <Card.Title>Email: {phone.price}</Card.Title>
-                  <Card.Title>Email: {phone.screen}</Card.Title>
-                  <Card.Title>Email: {phone.processor}</Card.Title>
+                  <Card.Title>
+                    {phone.name} from {phone.manufacturer}
+                  </Card.Title>
+                  <Card.Title>Color: {phone.color}</Card.Title>
+                  <Card.Title>Screen: {phone.screen} Inches</Card.Title>
+                  <Card.Title>Processor: {phone.processor} Ram</Card.Title>
+                  <br />
+                  <Card.Title>Description: {phone.description}</Card.Title>
+                  <Card.Title style={{ textAlign: "right" }}>
+                    Price: {phone.price} €
+                  </Card.Title>
                   <Button
                     className={`${classes.btnPrimary} ${classes.btnDetail}`}
                     onClick={handleReturn}
