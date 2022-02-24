@@ -8,7 +8,9 @@ mongoose.connection.on("error", (err) => {
 });
 
 mongoose.connection.once("open", () => {
+  console.log("*******************************");
   console.log("Conected to MongoDB in", mongoose.connection.name);
+  console.log("*******************************");
 });
 
 mongoose.connect("mongodb://localhost/phones", {

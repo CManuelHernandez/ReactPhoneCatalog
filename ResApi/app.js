@@ -9,6 +9,8 @@ var app = express();
 // Conection to the BBDD on Mongose
 require("./lib/connectMongose");
 
+require("./models/phone");
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
