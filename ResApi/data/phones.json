@@ -2,7 +2,7 @@
   "mobilePhones": [
     {
       "name": "iPhone 13",
-      "manufacturer": "apple",
+      "manufacturer": "Apple",
       "description": "lorem ipsum dolor sit amet consectetur",
       "color": "black",
       "price": 845,
@@ -13,7 +13,7 @@
     },
     {
       "name": "iPhone X",
-      "manufacturer": "apple",
+      "manufacturer": "Apple",
       "description": "lorem ipsum dolor sit amet consectetur",
       "color": "white",
       "price": 439,
