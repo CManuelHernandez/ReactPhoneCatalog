@@ -34,6 +34,7 @@ export const PhonesDetailPage = () => {
   return (
     <>
       <Container fluid className={classes.phoneSection}>
+        <h2 className={classes.phoneSubtitle}>Phone Detail</h2>
         <Container className={classes.phoneWrapper}>
           <Card className={classes.phoneCardViewDetail}>
             <Row>
@@ -47,7 +48,10 @@ export const PhonesDetailPage = () => {
                     />
                   </Col>
                   <Col md={9} className={classes.phoneDetailInfo}>
-                    <Card.Body className={classes.phoneDetailInfoText}>
+                    <Card.Body
+                      className={classes.phoneDetailInfoText}
+                      data-testid={`test`}
+                    >
                       <Card.Title className={classes.phoneCardTitle}>
                         {phone.name} from {phone.manufacturer}
                       </Card.Title>

@@ -53,9 +53,8 @@ export const PhonesPage = () => {
           <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
             {loading ? (
               phone.map((phone) => (
-                <Col md={5} className={classes.phoneCard}>
+                <Col md={5} className={classes.phoneCard} key={phone.id}>
                   <PhoneCard
-                    key={phone.id}
                     md={4}
                     className={classes.phoneCard}
                     name={phone.name}

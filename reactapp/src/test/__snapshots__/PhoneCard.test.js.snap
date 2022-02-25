@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on <PhonesPage /> snapshot testing 1`] = `
+<div
+  className="phoneSection container-fluid"
+>
+  <div
+    className="phoneWrapper container"
+  >
+    <div
+      className="phoneInfoTitle col-md-12"
+    >
+      <div>
+        <h1
+          className="phoneHeading"
+        >
+          <strong
+            className="turquoise"
+          >
+             REACT 
+          </strong>
+           - Phone Catalog
+        </h1>
+        <h2
+          className="phoneSubtitle"
+        >
+          Carlos Manuel Hernández Montero
+        </h2>
+      </div>
+    </div>
+    <div
+      className="row"
+      style={
+        Object {
+          "justifyContent": "center",
+          "paddingBottom": "10px",
+        }
+      }
+    >
+      <button
+        className="btn btn-danger"
+        disabled={true}
+        type="button"
+      >
+        <span
+          aria-hidden="true"
+          className="spinner-grow spinner-grow-sm"
+          role="status"
+        />
+        Loading...
+      </button>
+    </div>
+  </div>
+</div>
+`;

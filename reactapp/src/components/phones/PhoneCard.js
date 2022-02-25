@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col, Card, Button } from "react-bootstrap";
 import classes from "./Phone.module.css";
+import PropTypes from "prop-types";
 
 export const PhoneCard = ({
   id,
@@ -44,4 +45,14 @@ export const PhoneCard = ({
       </Card.Body>
     </Card>
   );
+};
+
+PhoneCard.protoType = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  manufacturer: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  imageFileName: PropTypes.string.isRequired,
+  processor: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
 };
