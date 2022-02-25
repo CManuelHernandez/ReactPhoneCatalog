@@ -5,6 +5,8 @@ This catallog works with an API model for the management of a phone site through
 It runs with express on a MongoDB database.
 Therefore, for its operation, the following steps will be needed in a Terminal already with NodeJs.
 
+**You need node installed on the computer where you want to run this application**
+
 ## Go to the folder of the API "ResApi" first then
 
 ## Install
